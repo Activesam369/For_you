@@ -1,0 +1,166 @@
+/* Import the Roboto Mono font */
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono");
+
+/* Box sizing */
+
+* {
+  box-sizing: border-box;
+  font-weight: normal;
+}
+
+/* Body styles */
+body {
+  background-repeat: no-repeat;
+  background-image: no-repeat;
+  overflow: hidden;
+  background-attachment: fixed;
+  background-size: cover;
+  transition: all 0.5s ease-in-out;
+  color: #555;
+  background: #222;
+  text-align: center;
+  font-family: "Roboto Mono";
+  padding: 1em;
+}
+
+/* Fade-in-out transition class */
+.fade-in-out {
+  transition: backgroundImage all 0.5s ease-in-out;
+}
+
+/* H1 styles */
+h1 {
+  font-size: 2.2rem;
+}
+
+/* Flip class */
+.flip {
+  position: relative;
+  display: inline-block;
+  margin-right: 2px;
+  margin-bottom: 1em;
+  width: 400px;
+}
+
+/* Front and back of flip class */
+.flip > .front,
+.flip > .back {
+  display: block;
+  color: white;
+  width: inherit;
+  background-size: cover !important;
+  background-position: center !important;
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.4s ease-in-out;
+  transition-property: transform, opacity;
+  height: 220px;
+  padding: 1em 2em;
+  background: #313131;
+  border-radius: 10px;
+}
+
+/* Front of flip class */
+.flip > .front {
+  transform: rotateY(0deg);
+}
+
+/* Back of flip class */
+.flip > .back {
+  position: absolute;
+  opacity: 0;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  transform: rotateY(-180deg);
+}
+
+/* Hover styles for front of flip class */
+.flip:hover > .front {
+  transform: rotateY(180deg);
+  transform: translateY(-10px);
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover styles for back of flip class */
+.flip:hover > .back {
+  opacity: 1;
+  transform: rotateY(0deg);
+  transform: translateY(-10px);
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Vertical flip class */
+.flip.flip-vertical > .back {
+  transform: rotateX(-180deg);
+}
+
+/* Hover styles for front of vertical flip class */
+.flip.flip-vertical:hover > .front {
+  transform: rotateX(180deg);
+  transform: translateY(-10px);
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover styles for back of vertical flip class */
+.flip.flip-vertical:hover > .back {
+  transform: rotateX(0deg);
+  transform: translateY(-10px);
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Front of flip para class */
+.flip > .front p,
+.flip > .back p {
+  font-size: 0.9125rem;
+  line-height: 160%;
+  color: #999;
+  transform: scale(1.1);
+}
+
+/* Front of flip h4 class */
+.flip > .front h4,
+.flip > .back h4 {
+  transform: scale(1.1);
+}
+
+/* This style adds multiple text shadows to text elements.
+   The shadows are created by multiple combinations of
+   1px and 2px horizontal and vertical offsets, and 
+   an RGBA color value of (0, 0, 0, 0.04). 
+   The shadows gradually increase in size, creating a
+   subtle depth effect. */
+.text-shadow {
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.04), 2px 2px rgba(0, 0, 0, 0.04),
+    3px 3px rgba(0, 0, 0, 0.04), 4px 4px rgba(0, 0, 0, 0.04),
+    0.125rem 0.125rem rgba(0, 0, 0, 0.04), 6px 6px rgba(0, 0, 0, 0.04),
+    7px 7px rgba(0, 0, 0, 0.04), 8px 8px rgba(0, 0, 0, 0.04),
+    9px 9px rgba(0, 0, 0, 0.04), 0.3125rem 0.3125rem rgba(0, 0, 0, 0.04),
+    11px 11px rgba(0, 0, 0, 0.04), 12px 12px rgba(0, 0, 0, 0.04),
+    13px 13px rgba(0, 0, 0, 0.04), 14px 14px rgba(0, 0, 0, 0.04),
+    0.625rem 0.625rem rgba(0, 0, 0, 0.04), 16px 16px rgba(0, 0, 0, 0.04),
+    17px 17px rgba(0, 0, 0, 0.04), 18px 18px rgba(0, 0, 0, 0.04),
+    19px 19px rgba(0, 0, 0, 0.04), 1.25rem 1.25rem rgba(0, 0, 0, 0.04);
+}
+
+@media only screen and (max-width: 600px) {
+  /* Your styles for devices with a screen width less than or equal to 600px go here */
+  .flip {
+    width: 300px;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  /* Your styles for devices with a screen width less than or equal to 400px go here */
+  .flip {
+    width: 200px;
+  }
+  h1 {
+    font-size: 1.2rem;
+  }
+}
+
+
